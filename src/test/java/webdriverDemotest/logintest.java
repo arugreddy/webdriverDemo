@@ -27,7 +27,7 @@ public class logintest {
 		driver.findElement(By.name("txtPassword")).sendKeys("admin123");
 		driver.findElement(By.name("Submit")).click();
 		String titleString = driver.getTitle();
-		System.out.println(titleString);
+		System.out.println("titleString: " + titleString);
 
 	}
 
