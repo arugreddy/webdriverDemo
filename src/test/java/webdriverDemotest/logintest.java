@@ -15,20 +15,22 @@ public class logintest {
 	@BeforeSuite
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "C:\\AR\\Drivers\\ChromeDriver.exe");
-		 driver = new ChromeDriver();
-		 driver.get("https://opensource-demo.orangehrmlive.com");
+		driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com");
 	}
 
 	@Test
 	public void logintest() {
-		//driver.get("https://opensource-demo.orangehrmlive.com");
-		//String titleString = driver.getTitle();
-         driver.findElement(By.name("txtUsername")).sendKeys("Admin");
-         driver.findElement(By.name("txtPassword")).sendKeys("admin123");
-         driver.findElement(By.name("Submit")).click();
-		//System.out.println(titleString);
+		// driver.get("https://opensource-demo.orangehrmlive.com");
+		// String titleString = driver.getTitle();
+		driver.findElement(By.name("txtUsername")).sendKeys("Admin");
+		driver.findElement(By.name("txtPassword")).sendKeys("admin123");
+		driver.findElement(By.name("Submit")).click();
+		String titleString = driver.getTitle();
+		System.out.println(titleString);
+
 	}
-	
+
 	@AfterSuite
 	public void tearDown() {
 		driver.quit();
